@@ -10,7 +10,7 @@ export OUTPUT_LOG_FILE=log.txt
 ### packaging the demo  ###
 ###########################
 cd ${DEMO_PATH}
-#mvn clean install package
+mvn clean install package
 
 ###########################
 ### execute code sample ###
