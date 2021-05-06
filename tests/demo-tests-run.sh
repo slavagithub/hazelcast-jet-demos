@@ -25,14 +25,14 @@ echo "All artifacts have been successfully built"
 #cd ..
 
 echo "markov-chain-generator: starting tests"
-export MARKOV_CHAIN_PATH=../markov-chain-generator
+export MARKOV_CHAIN_PATH=markov-chain-generator
 cd ${MARKOV_CHAIN_PATH}
 mvn clean package
 mvn exec:java --log-file ${OUTPUT_LOG_FILE}
 echo "markov-chain-generator: verifying messages in log"
 check_text_in_log "0.3333     | hanging "
 check_text_in_log "Generating model..."
-check_text_in_log "|  0.7864     | shall       |"
+check_text_in_log "ransitions for: tubbes"
 echo "markov-chain-generator: log messages successfully verified"
 cd ..
 
