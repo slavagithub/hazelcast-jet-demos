@@ -1,6 +1,6 @@
 #!/bin/bash
 #include lib
-.  demos-test-lib.sh
+.  demo-test-lib.sh
 export DEMO_PATH=../markov-chain-generator
 
 export OUTPUT_LOG_FILE=1log.txt
