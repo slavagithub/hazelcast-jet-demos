@@ -11,7 +11,7 @@ export OUTPUT_LOG_FILE=log.txt
 echo "Staring automated testing of jet demos"
 echo "Packaging all demo projects"
 cd ..
-mvn clean install package
+#mvn clean package
 echo "All artifacts have been successfully built"
 
 #echo "realtime-image-recognition: starting tests"
@@ -27,6 +27,7 @@ echo "All artifacts have been successfully built"
 echo "markov-chain-generator: starting tests"
 export MARKOV_CHAIN_PATH=../markov-chain-generator
 cd ${MARKOV_CHAIN_PATH}
+mvn clean package
 mvn exec:java --log-file ${OUTPUT_LOG_FILE}
 echo "markov-chain-generator: verifying messages in log"
 check_text_in_log "0.3333     | hanging "
@@ -38,7 +39,7 @@ cd ..
 echo "road-traffic-predictor: starting tests"
 export TRAFFIC_PREDICTOR_PATH=road-traffic-predictor
 cd ${TRAFFIC_PREDICTOR_PATH}
-mvn clean install package
+mvn clean package
 mvn exec:java --log-file ${OUTPUT_LOG_FILE}
 echo "road-traffic-predictor: verifying messages in log"
 check_text_in_log "Start executing job"
@@ -50,6 +51,7 @@ cd ..
 echo "tensorflow: starting tests"
 export TENSORFLOW_PATH=tensorflow
 cd ${TENSORFLOW_PATH}
+mvn clean package
 mvn compile exec:java -Dexec.mainClass=InProcessClassification -Dexec.args="data" > ${OUTPUT_LOG_FILE}
 echo "tensorflow: verifying messages in log"
 check_text_in_log "Start execution of job"
@@ -61,6 +63,7 @@ cd ..
 echo "h2o-breast-cancer-classification: starting tests"
 export H2O_CANCER_PATH=h2o-breast-cancer-classification
 cd ${H2O_CANCER_PATH}
+mvn clean package
 mvn exec:java --log-file ${OUTPUT_LOG_FILE}
 echo "h2o-breast-cancer-classification: verifying messages in log"
 check_text_in_log "Start execution of job"
