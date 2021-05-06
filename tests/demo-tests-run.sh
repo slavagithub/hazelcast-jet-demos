@@ -11,7 +11,7 @@ export OUTPUT_LOG_FILE=log.txt
 echo "Staring automated testing of jet demos"
 echo "Packaging all demo projects"
 cd ..
-#mvn clean install package
+mvn clean install package
 echo "All artifacts have been successfully built"
 
 echo "realtime-image-recognition: starting tests"
