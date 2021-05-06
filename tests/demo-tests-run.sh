@@ -14,15 +14,15 @@ cd ..
 mvn clean install package
 echo "All artifacts have been successfully built"
 
-echo "realtime-image-recognition: starting tests"
-cd ${RT_RECOGNITION_PATH}/target
-timeout 20s java -jar realtime-image-recognition-4.3-jar-with-dependencies.jar ../likevgg_cifar10 > ${OUTPUT_LOG_FILE}
-echo "realtime-image-recognition: verifying messages in log"
-check_text_in_log "execution graph in DOT format"
-check_text_in_log "Building execution plan for job"
-check_text_in_log "Executing job"
-echo "realtime-image-recognition: log messages successfully verified"
-cd ..
+#echo "realtime-image-recognition: starting tests"
+#cd ${RT_RECOGNITION_PATH}/target
+#timeout 20s java -jar realtime-image-recognition-4.3-jar-with-dependencies.jar ../likevgg_cifar10 > ${OUTPUT_LOG_FILE}
+#echo "realtime-image-recognition: verifying messages in log"
+#check_text_in_log "execution graph in DOT format"
+#check_text_in_log "Building execution plan for job"
+#check_text_in_log "Executing job"
+#echo "realtime-image-recognition: log messages successfully verified"
+#cd ..
 
 echo "markov-chain-generator: starting tests"
 export MARKOV_CHAIN_PATH=../markov-chain-generator
